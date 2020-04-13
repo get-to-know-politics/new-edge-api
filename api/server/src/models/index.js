@@ -13,7 +13,8 @@ console.log('this is the environment: ', env);
 const db = {};
 
 let sequelize;
-if (config.environment === 'production') {
+console.log(env)
+if (env === 'production') {
 
   sequelize = new Sequelize(
     {
