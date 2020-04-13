@@ -20,7 +20,6 @@ class ContactController {
     }
 
     static async addContact(req, res) {
-        console.log(req.body)
         if (!req.body.firstname || !req.body.lastname) {
           util.setError(400, 'Please provide complete details');
           return util.send(res);
@@ -83,8 +82,6 @@ class ContactController {
     static async deleteContact(req, res) {
         const { id } = req.params;
 
-        console.log('delete', id)
-
         if(!Number(id)) {
             util.setError(400, 'Please provide a numeric value');
             return util.send(res);
@@ -93,8 +90,6 @@ class ContactController {
         try {
             const contactToDelete = await ContactService.deleteContact(id);
 
-            console.log(contactToDelete)
-
             if (contactToDelete) {
                 util.setSuccess(200, 'Contact Deleted');
             } else {
@@ -102,7 +97,6 @@ class ContactController {
             }
             return util.send(res);
         } catch (error) {
-            console.log(error, 'catch')
             util.setError(400, error);
             return util.send(res);
         }

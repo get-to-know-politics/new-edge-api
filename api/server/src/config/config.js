@@ -9,7 +9,7 @@ module.exports = {
     "dialect": "postgres",
   },
   "test": {
-    "username": "root",
+    "username": null,
     "password": null,
     "database": "new-edge-test",
     "host": "127.0.0.1",
