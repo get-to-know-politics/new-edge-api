@@ -5,7 +5,9 @@ const util = new Util();
 
 class ContactController {
     static async getAllContacts(req, res) {
+        console.log('calling get all contacts')
         try {
+            console.log('trying all contacts')
             const allContacts = await ContactService.getAllContacts();
             if (allContacts.length > 0) {
                 util.setSuccess(200, 'Contacts retrieved', allContacts);
@@ -14,6 +16,7 @@ class ContactController {
             }
             return util.send(res);
         } catch (error) {
+            console.log(error, 'error in set all contacts')
             util.setError(400, error);
             return util.send(res);
         }

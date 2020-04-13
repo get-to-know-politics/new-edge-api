@@ -13,16 +13,15 @@ console.log('this is the environment: ', env);
 const db = {};
 
 let sequelize;
-console.log(env)
 if (env === 'production') {
+  console.log(env, 'sequelize running in models/index.js')
 
   sequelize = new Sequelize(
     {
       dialectOptions: {
-        ssl: true,
         native: true,
       },
-      logging: true,
+      logging: console.log,
       ...config
     }
   );
