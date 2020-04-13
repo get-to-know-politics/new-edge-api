@@ -14,7 +14,7 @@ env:
   - NODE_ENV=test
 
 before_script:
-  - psql -c 'create database new-edge-test;' -U postgres
+  - psql -c 'create database new_edge_test;' -U postgres
   - psql -c "CREATE USER hannah WITH PASSWORD null;" -U postgres
   - npm run build
   - npm install -g sequelize-cli
