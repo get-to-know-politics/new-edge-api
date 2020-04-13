@@ -13,7 +13,7 @@ module.exports = {
   "test": {
     "username": null,
     "password": null,
-    "database": "new-edge-test",
+    "database": "new_edge_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
