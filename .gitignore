@@ -1,2 +1,5 @@
 /node_modules
 .env
+firebase_key.json
+api/firebaseConfig.js
+/.vscode
